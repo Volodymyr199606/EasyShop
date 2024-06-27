@@ -61,6 +61,7 @@ public class CategoriesController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public Category addCategory(@RequestBody Category category) {
 
         // insert the category
@@ -72,6 +73,7 @@ public class CategoriesController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Category> updateCategory(@PathVariable int id, @RequestBody Category category) {
         Category existingCategory = categoryDao.getById(id);
         if (existingCategory != null) {
@@ -85,6 +87,7 @@ public class CategoriesController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Void> deleteCategory(@PathVariable int id) {
         Category existingCategory = categoryDao.getById(id);
         if (existingCategory != null) {
