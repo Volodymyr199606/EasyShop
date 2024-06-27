@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class ShoppingCart
 {
     private Map<Integer, ShoppingCartItem> items = new HashMap<>();
@@ -42,5 +43,7 @@ public class ShoppingCart
 
         return total;
     }
+
+
 
 }
