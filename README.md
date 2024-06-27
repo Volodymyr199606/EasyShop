@@ -37,3 +37,17 @@ Choosing color of the items and changing price
 ![ColorPrice](images/ColorPrice.PNG)
 
 ⚙️
+
+#### The changes and development was needed to be done in the backend Spring Boot API project.
+
+![BackEnd](images/BackEnd.PNG)
+
+⚙️
+
+The existing API code includes: user registration and login, the ability to display products by category, search for or filter the products list. The current API code was functioanl, but there was a few bugs in the current project.
+
+### The search/filter functionality had some bugs and returned inncorect search results. I tested different search and filter criteria to find and fix those bugs. Bug 1 Users have reported that the product search functionality is returning incorrect results.I was needed to test the search logic to find and fix the bugs. Bug 2 was Some users have also noticed that some of the products seem to be duplicated. Laptop was listed 3 times and it appears to be the same product, but there where slight differences, such as the description and price. I was needed to find and fix that bug, so that administrators can safely update products.
+
+🐛
+
+![PostmanTest](images/PostmanTest.PNG)
