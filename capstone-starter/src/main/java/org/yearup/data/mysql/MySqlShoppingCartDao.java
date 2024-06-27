@@ -9,7 +9,6 @@ import org.yearup.models.Product;
 import org.yearup.models.ShoppingCart;
 import org.yearup.models.ShoppingCartItem;
 
-
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,10 +18,12 @@ import java.sql.SQLException;
 
 
 
+
 @Component
-public class MySqlShoppingCartDao extends  MySqlDaoBase implements ShoppingCartDao
-{
-    private  ProductDao productDao;
+public class MySqlShoppingCartDao extends  MySqlDaoBase implements ShoppingCartDao {
+
+
+    private final ProductDao productDao;
 
     private static final Logger logger = LoggerFactory.getLogger(MySqlShoppingCartDao.class);
 
@@ -92,7 +93,8 @@ public class MySqlShoppingCartDao extends  MySqlDaoBase implements ShoppingCartD
         try (Connection connection = getConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setInt(1, userId);
-            pstmt.executeUpdate();
+            int rowsAffected = pstmt.executeUpdate();
+            logger.info("Number of rows deleted: {}", rowsAffected);
         } catch (SQLException e) {
             logger.error("Error while clearing cart for user with ID: {}", userId, e);
             throw new RuntimeException(e);

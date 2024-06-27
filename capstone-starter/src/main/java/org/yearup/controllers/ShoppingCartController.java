@@ -82,7 +82,7 @@ public class ShoppingCartController
     }
 
     @DeleteMapping
-    public void clearCart(Principal principal)
+    public ShoppingCart clearCart(Principal principal)
     {
         try
         {
@@ -90,6 +90,7 @@ public class ShoppingCartController
             User user = userDao.getByUserName(userName);
             int userId = user.getId();
             shoppingCartDao.clearCart(userId);
+            return shoppingCartDao.getByUserId(userId);
         }
         catch(Exception e)
         {

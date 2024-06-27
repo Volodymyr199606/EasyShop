@@ -92,9 +92,9 @@ public class CategoriesController {
         Category existingCategory = categoryDao.getById(id);
         if (existingCategory != null) {
             categoryDao.delete(id);
-            return ResponseEntity.noContent().build(); // 204 No Content
+            return ResponseEntity.noContent().build();
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build(); // 404 Not Found
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 }
