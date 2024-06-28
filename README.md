@@ -51,3 +51,19 @@ The existing API code includes: user registration and login, the ability to disp
 🐛
 
 ![PostmanTest](images/PostmanTest.PNG)
+
+🐛
+
+## NEW Feature
+
+🧊
+
+Added new feature for users, to have the ability to add items to their shopping cart. If a user loges out, the next time they log in the items that were added to the cart still are in the cart.
+
+When an item is added to the shopping cart, it gets added to the database for the current user.
+
+![AddedItems](images/AddedItems.PNG)
+
+🧊
+
+If a user loges out, the next time they log in the items that were added to the cart still are in the cart.
